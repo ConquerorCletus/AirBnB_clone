@@ -1,0 +1,1 @@
+# Static webpage with HTML and CSS
