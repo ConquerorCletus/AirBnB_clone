@@ -2,6 +2,7 @@ section .places{
     display: flex;
     flex-direction: column;
     padding-left: 30px;
+    flex-wrap: wrap;
 }
 .places h1{
     font-size: 30px;
@@ -71,8 +72,9 @@ article h2{
     width: 100px;
     display: flex;
     height: inherit;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
+    background-position-x: center;
 }
 .guest_icon{
     height: inherit;
@@ -91,8 +93,9 @@ article h2{
     width: 100px;
     display: flex;
     height: inherit;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
+    background-position-x: center;
 }
 .rooms_icon{
     height: inherit;
@@ -111,8 +114,9 @@ article h2{
     width: 100px;
     display: flex;
     height: inherit;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
+    background-position-x: center;
 }
 .bathrooms_icon{
     height: inherit;
@@ -131,6 +135,13 @@ article h2{
     text-align: left;
     margin-top: 15px;
 }
+.user {
+    padding: 20px 0 5px;
+  }
+.user b, p {
+    margin: 0;
+    padding: 0;
+  }
 .description{
     font-size: 14px;
     text-align: left;
