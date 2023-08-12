@@ -56,4 +56,4 @@ from the root directory.
 
 #### Collaborators
 - Azeez Tiamiyu
-- Chibuike Nwafor Cletus
+- [Chibuike Nwafor Cletus](https://github.com/ConquerorCletus)
