@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from uuid import uuid4
 from datetime import datetime
+import models
 
 class BaseModel():
 
@@ -17,6 +18,8 @@ class BaseModel():
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
+
 
 
     def __str__(self):
@@ -25,16 +28,14 @@ class BaseModel():
 
     def save(self):
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """Converts the instance to a dictionary representation."""
-        dictionary = self.__dict__.copy()  # Copy the instance attributes
-
-        # Add the class name to the dictionary
+        dictionary = self.__dict__.copy()
+        if 'created_at' in dictionary and isinstance(dictionary['created_at'], datetime):
+            dictionary['created_at'] = dictionary['created_at'].isoformat()
+        if 'updated_at' in dictionary and isinstance(dictionary['updated_at'], datetime):
+            dictionary['updated_at'] = dictionary['updated_at'].isoformat()
         dictionary['__class__'] = self.__class__.__name__
-
-        # Convert created_at and updated_at to ISO format strings
-        dictionary['created_at'] = self.created_at.isoformat()
-        dictionary['updated_at'] = self.updated_at.isoformat()
-
         return dictionary

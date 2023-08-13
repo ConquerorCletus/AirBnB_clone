@@ -5,7 +5,7 @@
 '''
 
 import unittest
-from models.base_model import BaseModel
+from clone_redo.models.base_model import BaseModel
 from io import StringIO
 import sys
 import datetime
